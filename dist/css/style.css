@@ -28,6 +28,14 @@ body {
   margin: 2rem auto;
 }
 
+.bookmark-title {
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
 .charactersGallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -42,6 +50,11 @@ body {
 
 .charactersGallery > *:hover {
   background-color: #e62429;
+}
+
+.marvel-attribution {
+  text-align: center;
+  margin: 1rem auto;
 }
 
 a {

@@ -1,4 +1,17 @@
-function getCharacters(searchValue) {
+function debounceFn(callbackfn, delay) {
+  let timeoutID;
+
+  return function (event) {
+    clearTimeout(timeoutID);
+
+    timeoutID = setTimeout(() => {
+      callbackfn(event);
+    }, delay);
+  };
+}
+
+function getCharacters(inputEvent) {
+  let searchValue = inputEvent.target.value;
   if (searchValue.length) {
     fetch(
       `${marvelApiUrl}?nameStartsWith=${searchValue}&limit=${limitSearch}&apikey=${apiKey}`
@@ -10,6 +23,7 @@ function getCharacters(searchValue) {
       });
   } else {
     charactersGallery.innerHTML = '';
+    marvelAttribution.classList.add('hide');
     displayBookmarkedChars();
   }
 }
@@ -35,6 +49,7 @@ function displayBookmarkedChars() {
 function drawGallery(results) {
   charactersGallery.innerHTML = '';
   results.forEach((character, i) => drawCharacter(character, i));
+  marvelAttribution.classList.remove('hide');
 }
 
 function drawCharacter(character, i) {
