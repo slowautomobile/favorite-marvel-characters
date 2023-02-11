@@ -19,7 +19,12 @@ function getCharacters(inputEvent) {
       .then(response => response.json())
       .then(data => {
         let results = data.data.results;
-        drawGallery(results);
+        if(results > 10) {
+// THIS IS ADDED ! !! 
+        } else {
+
+          drawGallery(results);
+        }
       });
   } else {
     charactersGallery.innerHTML = '';
