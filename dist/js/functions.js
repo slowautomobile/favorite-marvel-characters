@@ -30,7 +30,11 @@ function getCharacters(inputEvent, page = 1) {
       paginationEl.innerHTML = '';
       displayBookmarkedChars();
     }
-    marvelAttribution.classList.remove('hide');
+    if(localStorage.length) {
+      marvelAttribution.classList.remove('hide');
+    } else {
+      marvelAttribution.classList.add('hide');
+    }
 }
 
 
@@ -87,6 +91,7 @@ function updatePagination() {
 
 function drawGallery(results) {
   charactersGallery.innerHTML = '';
+  marvelAttribution.classList.remove('hide');
  
   results.forEach((character, i) => drawCharacter(character, i));
  
