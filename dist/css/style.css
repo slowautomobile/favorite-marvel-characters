@@ -28,6 +28,15 @@ body {
   margin: 2rem auto;
 }
 
+.bookmark-title {
+  text-align: center;
+}
+
+#bookmark-gallery {
+  width: 90%;
+  margin: 0 auto;
+}
+
 .charactersGallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -42,6 +51,40 @@ body {
 
 .charactersGallery > *:hover {
   background-color: #e62429;
+}
+
+.marvel-attribution {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.pagination-wrapper {
+  text-align: center;
+  margin: 3rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-wrapper p {
+  color: black;
+  padding: 8px 16px;
+  transition: background-color .3s;
+}
+
+.pagination-wrapper p.active {
+  background-color: black;
+  color: white;
+}
+
+.pagination-wrapper p:hover:not(.active) {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.pagination-wrapper p:(.active) {
+  background-color: #ddd;
+  cursor: pointer;
 }
 
 a {
@@ -100,6 +143,10 @@ a {
   font-weight: 600;
   text-align: center;
   color: white;
+}
+
+.hide {
+  display: none;
 }
 
 @media (max-width: 1007px) {
