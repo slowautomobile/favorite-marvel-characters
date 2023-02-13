@@ -32,8 +32,9 @@ body {
   text-align: center;
 }
 
-.hide {
-  display: none;
+#bookmark-gallery {
+  width: 90%;
+  margin: 0 auto;
 }
 
 .charactersGallery {
@@ -56,6 +57,34 @@ body {
   text-align: center;
   margin: 1rem auto;
 }
+
+.pagination-wrapper {
+  text-align: center;
+  margin: 3rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-wrapper p {
+  color: black;
+  padding: 8px 16px;
+  transition: background-color .3s;
+}
+
+/* Style the active/current link */
+.pagination-wrapper p.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Add a grey background color on mouse-over */
+.pagination-wrapper p:hover:not(.active) {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+
 
 a {
   text-decoration: none;
@@ -113,6 +142,10 @@ a {
   font-weight: 600;
   text-align: center;
   color: white;
+}
+
+.hide {
+  display: none;
 }
 
 @media (max-width: 1007px) {
